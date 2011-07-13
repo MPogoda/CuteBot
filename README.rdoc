@@ -1,0 +1,10 @@
+== About
+
+This is example bot that uses {Rumpy}[https://github.com/Ximik/Rumpy]
+
+== Features
+
+Simply wait for message "u r so cute" and responds "and u r 2 :3".
+
+== License
+CuteBot is released under the Mit license
