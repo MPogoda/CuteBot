@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 
-require 'rumpy.rb'
+require 'rumpy'
 
 class MyBot
   include Rumpy
 
   def initialize
     @config_path = 'config'
-    @models_path = '/models/*.rb'
+    @models_path = File.dirname(__FILE__) + '/models/*.rb'
     @main_model  = :user
   end
 
