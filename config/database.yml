@@ -1,6 +1,6 @@
-adapter: mysql
-database: test
-username: test
-password: test
-host: ximik.net
+adapter:  adapter
+database: database
+username: username
+password: password
+host:     host
 

@@ -3,7 +3,7 @@
 require 'rumpy'
 
 class MyBot
-  include Rumpy
+  include Rumpy::Bot
 
   def initialize
     @config_path = 'config'
@@ -15,10 +15,23 @@ class MyBot
     { :respond => ( m == "u r so cute" ) }
   end
 
+  def backend_func
+    sleep 5
+    result = Array.new
+    User.find_each do |user|
+      result << [ user.jid, "#{user.jid} r u here?" ]
+    end
+    result
+  end
+
   def do_func(model, params)
     "and u r 2 :3" if params[:respond]
   end
 end
 
-MyBot.new.start
-
+case ARGV[0]
+when '--start'
+  Rumpy.start MyBot
+when '--stop'
+  Rumpy.stop MyBot
+end
