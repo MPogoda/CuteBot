@@ -1,0 +1,4 @@
+jid:      node@domain.net/resource
+password: password
+status:   status
+priority: 125

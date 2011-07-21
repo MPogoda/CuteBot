@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require 'rumpy'
 
 class MyBot
@@ -9,6 +8,10 @@ class MyBot
     @config_path = 'config'
     @models_path = File.dirname(__FILE__) + '/models/*.rb'
     @main_model  = :user
+    @log_file    = STDOUT
+    @log_level   = Logger::DEBUG
+    @bot_name    = 'CuteBot'
+    @bot_version = '0.5.2'
   end
 
   def parser_func(m)
@@ -29,9 +32,4 @@ class MyBot
   end
 end
 
-case ARGV[0]
-when '--start'
-  Rumpy.start MyBot
-when '--stop'
-  Rumpy.stop MyBot
-end
+Rumpy.run MyBot
